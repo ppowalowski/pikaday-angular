@@ -61,6 +61,7 @@
         });
 
         function applyConfig (attr, value) {
+          value = scope.$eval(value);
           switch (attr) {
 
             // Booleans, Integers & Arrays
@@ -77,7 +78,7 @@
             case "numberOfMonths":
             case "mainCalendar":
 
-              config[attr] = scope.$eval(value);
+              config[attr] = value;
               break;
 
             // Functions
@@ -111,7 +112,6 @@
             case "minDate":
             case "maxDate":
             case "defaultDate":
-              scope.$eval(value);
               config[attr] = new Date(value);
               break;
 
