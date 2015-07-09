@@ -111,7 +111,7 @@
             case "minDate":
             case "maxDate":
             case "defaultDate":
-
+              scope.$eval(value);
               config[attr] = new Date(value);
               break;
 
